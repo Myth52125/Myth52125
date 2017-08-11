@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html<%= config.language ? " lang=" + config.language.substring(0, 2) : ""%>>
-<%- partial('_partial/head') %>
+<%- partial('common/head') %>
 <body>
-    <% if (is_post()) { %>
-      <%- partial('_partial/post/actions_desktop') %>
-    <% } %>
-    <div class="content index width mx-auto px2 my4">
-        <% if (!is_post()) { %>
-          <%- partial('_partial/header') %>
-        <% } %>
-        <%- body %>
+    <div id="wrap">
+        <%- partial('common/header', null, {cache: !config.relative_link}) %>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <%- partial('common/content-title') %>
+                        <div class="main-body-content">
+                            <%- body %>
+                        </div>
+                    </section>
+                    <%- partial('common/sidebar') %>
+                </div>
+            </div>
+        </div>
+        <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+        <%- partial('common/scripts') %>
     </div>
-    <% if (is_post()) { %>
-      <%- partial('_partial/post/actions_mobile') %>
-    <% } %>
-    <%- partial('_partial/footer') %>
 </body>
 </html>
-<%- partial('_partial/styles') %>
-<%- partial('_partial/scripts') %>

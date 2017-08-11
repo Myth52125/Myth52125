@@ -1,90 +1,27 @@
 #header
-  max-width: 710px
-  width: 100%
-  margin: 0 auto 3rem auto
+    background: color-header-background
+    padding-bottom: nav-height
+    position: relative
 
-  h1, .h1
-    letter-spacing: 0.01em
-    font-size: 1.5rem
-    line-height: 2rem
-    font-style: normal
-    font-weight: 700
-    color: $color-text
-    margin-top: 0
-    margin-bottom: 0
-    antialias()
+#header-outer
+    height: 100%
+    position: relative
 
-  a
-    color: inherit
-    text-decoration: none
-    background: none
+#header-inner
+    position: relative
 
-  #logo
-    display: inline-block
-    float: left
-    margin-right: 20px
-    width: logo-width
-    height: logo-height
-    background-repeat: no-repeat
-    background-size: logo-width logo-height
-    border-radius: 5px
-    -webkit-filter: grayscale(100%)
-    filter: grayscale(100%)
-
-  #nav
-    letter-spacing: 0.01em
-    font-size: .8rem
-    font-style: normal
-    font-weight: 200
-    color: $color-accent
-    ul
-      list-style-type: none
-      margin: 0
-      padding: 0
-      line-height: 15px
-      a
-        margin-right: 15px
-        color: color-accent
-      a:hover
-          underline(5px, $color-accent)
-      li
-        display: inline-block
-        vertical-align: middle
-        margin-right: 15px
-        border-right: 1px dotted $color-accent
-      .icon
-        display: none
-      li:last-child
-        border-right: 0
-        margin-right: 0
-        a
-          margin-right: 0
-
-#header:hover
-  #logo
-    -webkit-filter: none
-    filter: none
-
-@media screen and (max-width:480px)
-  #header #title
-    padding-top: (logo-height / 2) - 16
-    padding-bottom: (logo-height / 2) - 16
-  #header #nav
-    ul
-      a:hover
-        background: none
-      li
-        display: none
-        border-right: 0
-      li.icon
-        display: inline-block
-        position: absolute
-        top: 55px
-        right: 1rem
-    ul.responsive
-      li
-        display: block;
-    li:not(:first-child)
-        padding-top: 1rem
-        padding-left: logo-width + 20px
-        font-size: 1rem
+#header-title
+    clearfix()
+    text-align: center
+    padding: 30px 30px
+    .logo-wrap, .subtitle-wrap
+        float: left
+    .subtitle-wrap
+        padding: 10px 0px 0px
+        margin-left: 20px
+    .subtitle
+        font-size: 16px
+        font-style: italic
+        line-height: logo-height + 10
+        color: color-nav-foreground
+        text-shadow: 0 1px rgba(0, 0, 0, 0.2)

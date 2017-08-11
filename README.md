@@ -1,157 +1,68 @@
-# Cactus Dark
+# Hueman
+#### Probably the most beautiful theme for Hexo. [Preview](http://ppoffice.github.io/hexo-theme-hueman/)
 
-A responsive, dark and simple [Hexo](http://hexo.io) theme for a personal website.
+![Hueman](http://ppoffice.github.io/hexo-theme-hueman/gallery/screenshot.jpg "")
 
-:cactus: [Demo](https://probberechts.github.io/cactus-dark/)
+> This theme is ported from [AlxMedia](https://github.com/AlxMedia)'s the WordPress theme [Hueman](https://github.com/AlxMedia/hueman).
 
-![cactus-dark](https://cloud.githubusercontent.com/assets/2175271/19885143/62e9269c-a01d-11e6-8e26-e36a36201d88.png)
+> Special thanks to [AlxMedia](https://github.com/AlxMedia), who designed the original theme [Hueman](https://github.com/AlxMedia/hueman) for wordpress.
 
-## Summary
-
-- [General](#general)
-- [Features](#features)
-- [Install](#install)
-- [Configuration](#configuration)
-- [License](#license)
-
-## General
-
-- **Version** : 2.0
-- **Compatibility** : Hexo 3 or later
+#### [View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
+:star: It is strongly recommended that you read the docs before using Hueman.
 
 ## Features
 
-- Fully responsive
-- Disqus
-- Googe analytics
-- Font Awesome icons
-- Pick your own code highlighting scheme
-- Configurable navigation menu
-- Projects list
-- Simplicity
+### Responsive Layout
 
-## Install
-1. In the `root` directory:
+Hueman knows on what screen size you are browsering the website, and reorganize the layout to fit your device.
 
-    ```git
-    $ git clone https://github.com/probberechts/cactus-dark.git themes/cactus-dark
-    $ npm install hexo-pagination --save
-    ```
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/responsive.jpg "")
 
-2. Change the `theme` property in the `config.yml` file.
+### Categories inside Main Menu
 
-    ```yml
-    # theme: landscape
-    theme: cactus-dark
-    ```
+Hueman inserts your blog categories into main menu in the header section. You can enable/disable this feature in `menu` setting.
 
-3. Run: `hexo generate` and `hexo server`
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/main-menu.jpg "")
 
-## Configuration
+### Self-hosted Insite Search Engine
+With the help of [Insight Search](https://github.com/ppoffice/hexo-theme-hueman/wiki/Search#insight-search), you can search anything inside your site without any third-party plugin.
 
-### Navigation
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/insight-search.png "")
 
-Setup the navigation menu in the theme's `_config.yml`:
+### Custom Comment Services
+Hueman supports several comment services, give you better choices to communicate with your readers.
 
-  ```
-  nav:
-    Home: /
-    About: /about/
-    Writing: /archives/
-    Projects: http://github.com/probberechts
-    LINK_NAME: URL
-  ```
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/custom-comments.png "")
 
-### Blog posts list on home page
+### Thumbnail
 
-You have two options for the list of blog posts on the home page:
+Hueman uses the `thumbnail` [front-matter](https://hexo.io/docs/front-matter.html) option to set the thumbnail for a post. If the post does not have a `thumbnail` option, Hueman will find the first image in the post as the thumbnail. You can enable/disable this feature in `thumbnail` setting.
 
-  - Show only the 5 most recent posts (default)
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/thumbnail.jpg "")
 
-  ```
-  customize:
-    show_all_posts: false
-    post_count: 5
-  ```
+### Code Highlight
+Hueman has more than 60 themes imported from [Highlight.js](https://github.com/isagalaev/highlight.js), and it is very easy to customize your own highlight theme.
 
-  - Show all posts 
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/code-highlight.png "")
 
-  ```
-  customize:
-    show_all_posts: true
-  ```
+### lightgallery
 
-### Projects list
+Hueman uses [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js/) to showcase your photos. Just enable it in your configuration, and that's all!
 
-Create a projects file `source/_data/projects.json`.
+![](http://ppoffice.github.io/hexo-theme-hueman/gallery/lightgallery.jpg "")
 
-  ```json
-  [
-      {
-         "name":"Hexo",
-         "url":"https://hexo.io/",
-         "desc":"A fast, simple & powerful blog framework"
-      },
-      {
-         "name":"Font Awesome",
-         "url":"http://fontawesome.io/",
-         "desc":"The iconic font and CSS toolkit"
-      }
-  ]
-  ```
+### Sidebar
 
-### Social media links
+Hueman provides 6 built-in widgets:
 
-Cactus Dark can automatically add links to your social media accounts. Therefore, update the theme's `_config.yml`:
+- recent_posts
+- category
+- archives
+- tag
+- tagcloud
+- links
 
-  ```
-  customize:
-    social_links:
-      github: your-github-url
-      twitter: your-twitter-url
-      NAME: your-NAME-url
-  ```
+All of them are enabled by default. You can edit them in `widget` setting.
 
-where `NAME` is the name of a [Font Awesome icon](http://fontawesome.io/icons/#brand).
-
-### RSS
-
-Set the `rss` field in the theme's `_config.yml` to one of the following values:
-
-1. `rss: false` will totally disable rss (default).
-2. `rss: atom.xml` sets a specific feed link.
-3. `rss:`leave empty to use the [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) plugin. 
-
-### Analytics
-
-Add you Google Analytics `tracking_id` to the theme's `_config.yml`.
-
-  ```
-  plugins:
-      gooogle_analytics: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-  ```
-
-### Comments
-
-First, create a site on Disqus: [https://disqus.com/admin/create/](http://disqus.com/admin/create/).
-
-Next, update the theme's `_config.yml` file:
-
-  ```
-  plugins:
-      disqus_shortname: SITENAME
-  ```
-
-where `SITENAME` is the name you gave your site on Disqus.
-
-### Code Highlighting
-
-Pick one of [the available colorschemes](https://github.com/probberechts/cactus-dark/tree/master/source/css/_highlight) and add it to the theme's `_config.yml`:
-
-  ```
-  customize:
-      highlight: COLORSCHEME_NAME
-  ```
-
-## License
-MIT
+### And so many new features to be explored...
+[View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
