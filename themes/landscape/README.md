@@ -1,111 +1,54 @@
-# Landscape
+![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
 
-A brand new default theme for [Hexo].
+## 更新日志
+### 2017-07-21
+- bubuzou.css 规范化了`css`文件
 
-- [Preview](http://hexo.io/hexo-theme-landscape/)
+### 2017-07-12
+- 评论系统由网易云跟帖改成了畅言
 
-## Installation
+### 2017-06-25
+- 增加了文章访问次数的统计功能
 
-### Install
+### 2017-06-07
+- 文章目录优化，能够自适应定位
 
-``` bash
-$ git clone https://github.com/hexojs/hexo-theme-landscape.git themes/landscape
+## 说明
+
+hexo-theme-bubuzou主题是根据hexo里Apollo主题改编而来的，[主题效果](http://bubuzou.com/)
+
+## 安装
+想要把hexo的主题应用到自己的博客上，需要在本地先构建好hexo所依赖的环境。[hexo使用文档](https://hexo.io/zh-cn/docs/index.html)
+大致的步骤是这样的：
+- 安装git
+- 安装node.js
+- 安装hexo
+
+``` 
+$ npm install -g hexo-cli
 ```
-
-**Landscape requires Hexo 2.4 and above.**
-
-### Enable
-
-Modify `theme` setting in `_config.yml` to `landscape`.
-
-### Update
-
-``` bash
-cd themes/landscape
-git pull
-```
-
-## Configuration
-
-``` yml
-# Header
-menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
-
-# Content
-excerpt_link: Read More
-fancybox: true
-
-# Sidebar
-sidebar: right
-widgets:
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
-```
-
-- **menu** - Navigation menu
-- **rss** - RSS link
-- **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
-- **fancybox** - Enable [Fancybox]
-- **sidebar** - Sidebar style. You can choose `left`, `right`, `bottom` or `false`.
-- **widgets** - Widgets displaying in sidebar
-- **google_analytics** - Google Analytics ID
-- **favicon** - Favicon path
-- **twitter** - Twiiter ID
-- **google_plus** - Google+ ID
-
-## Features
-
-### Fancybox
-
-Landscape uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.
+- 构建站点
 
 ```
-![img caption](img url)
-
-{% fancybox img_url [img_thumbnail] [img_caption] %}
+    $ hexo init d://Blog
+    $ cd d://Blog
+    $ npm install
 ```
 
-### Sidebar
+- clone主题
+这个时候已经构建好了站点，但是使用的主题是hexo默认的`landscape`。所以如果需要变更为`bubuzou`主题，就需要从github上clone到本地，修改文件名为`bubuzou`，并且放到`d://Blog/theme`下
+[hexo-theme-bubuzou主题](https://github.com/Bulandent/hexo-theme-bubuzou)
+- 修改主题
+然后把blog目录下的`_config.yml`配置文件里的`theme: landscape`改成`bubuzou`即可
+- 安装依赖包
+hexo里每个不同的主题所依赖的包都不尽相同。安装的默认主题已经包含了一些依赖包，但是对于`bubuzou`这个主题来说是不够的，所以还需要安装以下几个:
 
-You can put your sidebar in left side, right side or bottom of your site by editing `sidebar` setting.
+```
+    npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive
+    npm install --save hexo-deployer-git hexo-generator-json-content hexo-generator-search
+```
 
-Landscape provides 5 built-in widgets:
+## 主题说明文档
 
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
+- [中文文档](https://github.com/bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
 
-All of them are enabled by default. You can edit them in `widget` setting.
-
-## Development
-
-### Requirements
-
-- [Grunt] 0.4+
-- Hexo 2.4+
-
-### Grunt tasks
-
-- **default** - Download [Fancybox] and [Font Awesome].
-- **fontawesome** - Only download [Font Awesome].
-- **fancybox** - Only download [Fancybox].
-- **clean** - Clean temporarily files and downloaded files.
-
-[Hexo]: http://zespia.tw/hexo/
-[Fancybox]: http://fancyapps.com/fancybox/
-[Font Awesome]: http://fontawesome.io/
-[Grunt]: http://gruntjs.com/

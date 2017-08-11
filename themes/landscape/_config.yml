@@ -1,36 +1,32 @@
-# Header
 menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
+    博文: /
+    归档: /archives/
+    生活: /categories/live/
+    摄影: /categories/film/
+    关于: /about/
 
-# Content
-excerpt_link: Read More
-fancybox: true
-
-# Sidebar
-sidebar: right
 widgets:
 - category
 - tag
 - tagcloud
 - archive
-- recent_posts
 
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
+# count
+show_count: true
+favicon: /images/favicon.ico
+logo: /images/logo.png
 
-# widget behavior
-archive_type: 'monthly'
-show_count: false
+# Comment
+changyan: bubuzou
+yungentie: 
+disqus:
+duoshuo: 
 
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+
+# Analytics
+# google-analytics:
+ga: UA-65933410-1
+
+# Copyright Infomation
+startyear: 2016
+

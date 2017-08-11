@@ -1,12 +1,30 @@
 {
-  "name": "hexo-theme-landscape",
-  "version": "0.0.1",
-  "private": true,
+  "name": "hexo-theme-bubuzou",
+  "version": "1.0.0",
+  "description": "A hexo theme remoulded by hexo-theme-apollo",
+  "main": "index.js",
+  "scripts": {
+    "sass": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bulandent/hexo-theme-bubuzou"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "apollo"
+  ],
+  "author": "brandon Sun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinggod/hexo-theme-apollo/issues"
+  },
+  "homepage": "https://github.com/pinggod/hexo-theme-apollo#readme",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "load-grunt-tasks": "~0.2.0",
-    "grunt-git": "~0.2.2",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1"
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
