@@ -1,68 +1,54 @@
-# Hueman
-#### Probably the most beautiful theme for Hexo. [Preview](http://ppoffice.github.io/hexo-theme-hueman/)
+![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
 
-![Hueman](http://ppoffice.github.io/hexo-theme-hueman/gallery/screenshot.jpg "")
+## 更新日志
+### 2017-07-21
+- bubuzou.css 规范化了`css`文件
 
-> This theme is ported from [AlxMedia](https://github.com/AlxMedia)'s the WordPress theme [Hueman](https://github.com/AlxMedia/hueman).
+### 2017-07-12
+- 评论系统由网易云跟帖改成了畅言
 
-> Special thanks to [AlxMedia](https://github.com/AlxMedia), who designed the original theme [Hueman](https://github.com/AlxMedia/hueman) for wordpress.
+### 2017-06-25
+- 增加了文章访问次数的统计功能
 
-#### [View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
-:star: It is strongly recommended that you read the docs before using Hueman.
+### 2017-06-07
+- 文章目录优化，能够自适应定位
 
-## Features
+## 说明
 
-### Responsive Layout
+hexo-theme-bubuzou主题是根据hexo里Apollo主题改编而来的，[主题效果](http://bubuzou.com/)
 
-Hueman knows on what screen size you are browsering the website, and reorganize the layout to fit your device.
+## 安装
+想要把hexo的主题应用到自己的博客上，需要在本地先构建好hexo所依赖的环境。[hexo使用文档](https://hexo.io/zh-cn/docs/index.html)
+大致的步骤是这样的：
+- 安装git
+- 安装node.js
+- 安装hexo
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/responsive.jpg "")
+``` 
+$ npm install -g hexo-cli
+```
+- 构建站点
 
-### Categories inside Main Menu
+```
+    $ hexo init d://Blog
+    $ cd d://Blog
+    $ npm install
+```
 
-Hueman inserts your blog categories into main menu in the header section. You can enable/disable this feature in `menu` setting.
+- clone主题
+这个时候已经构建好了站点，但是使用的主题是hexo默认的`landscape`。所以如果需要变更为`bubuzou`主题，就需要从github上clone到本地，修改文件名为`bubuzou`，并且放到`d://Blog/theme`下
+[hexo-theme-bubuzou主题](https://github.com/Bulandent/hexo-theme-bubuzou)
+- 修改主题
+然后把blog目录下的`_config.yml`配置文件里的`theme: landscape`改成`bubuzou`即可
+- 安装依赖包
+hexo里每个不同的主题所依赖的包都不尽相同。安装的默认主题已经包含了一些依赖包，但是对于`bubuzou`这个主题来说是不够的，所以还需要安装以下几个:
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/main-menu.jpg "")
+```
+    npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive
+    npm install --save hexo-deployer-git hexo-generator-json-content hexo-generator-search
+```
 
-### Self-hosted Insite Search Engine
-With the help of [Insight Search](https://github.com/ppoffice/hexo-theme-hueman/wiki/Search#insight-search), you can search anything inside your site without any third-party plugin.
+## 主题说明文档
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/insight-search.png "")
+- [中文文档](https://github.com/bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
 
-### Custom Comment Services
-Hueman supports several comment services, give you better choices to communicate with your readers.
-
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/custom-comments.png "")
-
-### Thumbnail
-
-Hueman uses the `thumbnail` [front-matter](https://hexo.io/docs/front-matter.html) option to set the thumbnail for a post. If the post does not have a `thumbnail` option, Hueman will find the first image in the post as the thumbnail. You can enable/disable this feature in `thumbnail` setting.
-
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/thumbnail.jpg "")
-
-### Code Highlight
-Hueman has more than 60 themes imported from [Highlight.js](https://github.com/isagalaev/highlight.js), and it is very easy to customize your own highlight theme.
-
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/code-highlight.png "")
-
-### lightgallery
-
-Hueman uses [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js/) to showcase your photos. Just enable it in your configuration, and that's all!
-
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/lightgallery.jpg "")
-
-### Sidebar
-
-Hueman provides 6 built-in widgets:
-
-- recent_posts
-- category
-- archives
-- tag
-- tagcloud
-- links
-
-All of them are enabled by default. You can edit them in `widget` setting.
-
-### And so many new features to be explored...
-[View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
