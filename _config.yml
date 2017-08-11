@@ -1,9 +1,30 @@
-name: Myth52125
-url: 
-description: 我在nodejs中踩过的坑
+# Header
+menu:
+  Home: /
+  Archives: /archives
 
-permalink: /:year/:month/:day/:title/
-paginate: 10
+# Content
+excerpt_link: More
+prev: Prev
+next: Next
+reply: Reply
+share: Share
+fancybox: true
 
-gems: [jekyll-paginate]
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+# Sidebar
+widgets:
+- search
+- music
+- category
+- recent_posts
+- tag
+- tagcloud
+
+# Miscellaneous
+google_analytics:
+duoshuo_shortname: 
+rss: 
+google_site_verification: 
+baidu_site_verification: 
+favicon: 
+music: 

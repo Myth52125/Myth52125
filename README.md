@@ -1,44 +1,70 @@
-Solar Theme for Jekyll
-======================
+# Hexo Theme: CyanStyle
 
-A stylish theme for [Jekyll](http://jekyllrb.com/) blogs, based on the [Solarized](http://ethanschoonover.com/solarized) color palette.
+CyanStyle 是 Wordpress 的 Twentytwelve 主题在 Hexo 上的迁移。
 
-![Screenshot](http://i.imgur.com/UnnRhkt.png)
+## 安装
 
+```
+git clone https://github.com/wizardforcel/hexo-theme-cyanstyle.git themes/cyanstyle
+```
 
-Features
--------
+修改 Hexo 的 `_config.yml` 中的 `theme` 为 `cyanstyle`。
 
-* **Two color schemes** — One for Solarized Dark and one for Solarized Light. Just swap the reference to the `colors-dark.css` file with `colors-light.css` if you don't like light-on-dark.
-* **Linkblog support** — Solar will turn your post title into an external link if you add `external-url: http://example.org` to a post's YAML front matter.
-* **Responsive Design** — Solarized adapts to fit any screen size.
+## 升级
 
+```
+cd themes/cyanstyle
+git pull
+```
 
-Installation
---------------
+## 配置
 
-There are two ways to use Solar. You can either clone-and-go, copying the repository and tweaking the contents to taste, or you can cherry-pick the files you want and integrate them into an existing Jekyll instance. 
+默认的`_config.yml`文件：
 
-If you're starting a new blog, you want to clone-and-go. Just `git clone https://github.com/redwallhp/solar-theme-jekyll.git`, make any changes you want to the template, pages or `_config.yml` and start blogging with Jekyll. Easy.
+``` yaml
+# Header
+menu:
+  Home: /
+  Archives: /archives
 
-If you're wanting to replace the theme of an existing Jekyll blog, either option should work. If you want to replace files individually, the files and directories you want to make sure to copy are:
+# Content
+excerpt_link: More
+prev: Prev
+next: Next
+reply: Reply
+share: Share
+fancybox: true
 
-1. `_layouts`
-2. `archives`
-3. `assets`
-4. `feed.xml`
-5. `index.xml`
+# Sidebar
+widgets:
+- search
+- music
+- category
+- recent_posts
+- tag
+- tagcloud
 
-You'll also want to compare Solar's `_config.yml` with your own, making any appropriate changes.
+# Miscellaneous
+google_analytics:
+duoshuo_shortname: 
+rss: 
+google_site_verification: 
+baidu_site_verification: 
+favicon: 
+music: 
+```
 
++ `menu` - 导航栏的菜单，键值对形式，键为文字，值为连接
++ `widgets` - 侧栏上的小工具，一行一个
++ `duoshuo_shortname` - 站点的多说ID，可选
++ `fancybox` - 是否开启 jQuery 弹出层效果
++ `google_analytics` - Google Analytics ID ，可选
++ `rss` - rss 订阅链接，可选
++ `google_site_verification` - 用于谷歌站长工具验证所有权的ID，可选
++ `baidu_site_verification` - 用于百度站长工具验证所有权的ID，可选
++ `favicon` - 用于在浏览器标签上显示的图标，可选，如果不指定则会加载默认图标
++ `music` - 侧栏上的播放器音乐，如果不指定音乐组件将不会显示
 
-Demo
--------
+## 协议
 
-You can see a demo of Solar [right here on GitHub Pages.](http://mattvh.github.io/solar-theme-jekyll/)
-
-
-License
----------
-
-GPLv2 or higher
+[GPL v3+](LICENSE)
