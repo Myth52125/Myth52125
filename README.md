@@ -1,70 +1,157 @@
-# Hexo Theme: CyanStyle
+# Cactus Dark
 
-CyanStyle 是 Wordpress 的 Twentytwelve 主题在 Hexo 上的迁移。
+A responsive, dark and simple [Hexo](http://hexo.io) theme for a personal website.
 
-## 安装
+:cactus: [Demo](https://probberechts.github.io/cactus-dark/)
 
-```
-git clone https://github.com/wizardforcel/hexo-theme-cyanstyle.git themes/cyanstyle
-```
+![cactus-dark](https://cloud.githubusercontent.com/assets/2175271/19885143/62e9269c-a01d-11e6-8e26-e36a36201d88.png)
 
-修改 Hexo 的 `_config.yml` 中的 `theme` 为 `cyanstyle`。
+## Summary
 
-## 升级
+- [General](#general)
+- [Features](#features)
+- [Install](#install)
+- [Configuration](#configuration)
+- [License](#license)
 
-```
-cd themes/cyanstyle
-git pull
-```
+## General
 
-## 配置
+- **Version** : 2.0
+- **Compatibility** : Hexo 3 or later
 
-默认的`_config.yml`文件：
+## Features
 
-``` yaml
-# Header
-menu:
-  Home: /
-  Archives: /archives
+- Fully responsive
+- Disqus
+- Googe analytics
+- Font Awesome icons
+- Pick your own code highlighting scheme
+- Configurable navigation menu
+- Projects list
+- Simplicity
 
-# Content
-excerpt_link: More
-prev: Prev
-next: Next
-reply: Reply
-share: Share
-fancybox: true
+## Install
+1. In the `root` directory:
 
-# Sidebar
-widgets:
-- search
-- music
-- category
-- recent_posts
-- tag
-- tagcloud
+    ```git
+    $ git clone https://github.com/probberechts/cactus-dark.git themes/cactus-dark
+    $ npm install hexo-pagination --save
+    ```
 
-# Miscellaneous
-google_analytics:
-duoshuo_shortname: 
-rss: 
-google_site_verification: 
-baidu_site_verification: 
-favicon: 
-music: 
-```
+2. Change the `theme` property in the `config.yml` file.
 
-+ `menu` - 导航栏的菜单，键值对形式，键为文字，值为连接
-+ `widgets` - 侧栏上的小工具，一行一个
-+ `duoshuo_shortname` - 站点的多说ID，可选
-+ `fancybox` - 是否开启 jQuery 弹出层效果
-+ `google_analytics` - Google Analytics ID ，可选
-+ `rss` - rss 订阅链接，可选
-+ `google_site_verification` - 用于谷歌站长工具验证所有权的ID，可选
-+ `baidu_site_verification` - 用于百度站长工具验证所有权的ID，可选
-+ `favicon` - 用于在浏览器标签上显示的图标，可选，如果不指定则会加载默认图标
-+ `music` - 侧栏上的播放器音乐，如果不指定音乐组件将不会显示
+    ```yml
+    # theme: landscape
+    theme: cactus-dark
+    ```
 
-## 协议
+3. Run: `hexo generate` and `hexo server`
 
-[GPL v3+](LICENSE)
+## Configuration
+
+### Navigation
+
+Setup the navigation menu in the theme's `_config.yml`:
+
+  ```
+  nav:
+    Home: /
+    About: /about/
+    Writing: /archives/
+    Projects: http://github.com/probberechts
+    LINK_NAME: URL
+  ```
+
+### Blog posts list on home page
+
+You have two options for the list of blog posts on the home page:
+
+  - Show only the 5 most recent posts (default)
+
+  ```
+  customize:
+    show_all_posts: false
+    post_count: 5
+  ```
+
+  - Show all posts 
+
+  ```
+  customize:
+    show_all_posts: true
+  ```
+
+### Projects list
+
+Create a projects file `source/_data/projects.json`.
+
+  ```json
+  [
+      {
+         "name":"Hexo",
+         "url":"https://hexo.io/",
+         "desc":"A fast, simple & powerful blog framework"
+      },
+      {
+         "name":"Font Awesome",
+         "url":"http://fontawesome.io/",
+         "desc":"The iconic font and CSS toolkit"
+      }
+  ]
+  ```
+
+### Social media links
+
+Cactus Dark can automatically add links to your social media accounts. Therefore, update the theme's `_config.yml`:
+
+  ```
+  customize:
+    social_links:
+      github: your-github-url
+      twitter: your-twitter-url
+      NAME: your-NAME-url
+  ```
+
+where `NAME` is the name of a [Font Awesome icon](http://fontawesome.io/icons/#brand).
+
+### RSS
+
+Set the `rss` field in the theme's `_config.yml` to one of the following values:
+
+1. `rss: false` will totally disable rss (default).
+2. `rss: atom.xml` sets a specific feed link.
+3. `rss:`leave empty to use the [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) plugin. 
+
+### Analytics
+
+Add you Google Analytics `tracking_id` to the theme's `_config.yml`.
+
+  ```
+  plugins:
+      gooogle_analytics: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+  ```
+
+### Comments
+
+First, create a site on Disqus: [https://disqus.com/admin/create/](http://disqus.com/admin/create/).
+
+Next, update the theme's `_config.yml` file:
+
+  ```
+  plugins:
+      disqus_shortname: SITENAME
+  ```
+
+where `SITENAME` is the name you gave your site on Disqus.
+
+### Code Highlighting
+
+Pick one of [the available colorschemes](https://github.com/probberechts/cactus-dark/tree/master/source/css/_highlight) and add it to the theme's `_config.yml`:
+
+  ```
+  customize:
+      highlight: COLORSCHEME_NAME
+  ```
+
+## License
+MIT

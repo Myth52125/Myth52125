@@ -1,7 +1,6 @@
-<% if (post.tags && post.tags.length){ %>
-  <span class="article-delim">&#8226;</span>
-  <%- list_tags(post.tags, {
-    show_count: false,
-    class: 'article-tag'
-  }) %>
+<% if (page.tags && page.tags.length) { %>
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <%- list_tags(page.tags, { show_count: false, style: 'link' }) %>
+    </div>
 <% } %>

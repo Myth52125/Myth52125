@@ -1,30 +1,52 @@
-# Header
-menu:
+nav:
   Home: /
-  Archives: /archives
+  About: /about/
+  Writing: /archives/
+  Projects: http://github.com/probberechts
 
-# Content
-excerpt_link: More
-prev: Prev
-next: Next
-reply: Reply
-share: Share
-fancybox: true
+projects_url: http://github.com/probberechts
 
-# Sidebar
-widgets:
-- search
-- music
-- category
-- recent_posts
-- tag
-- tagcloud
+customize:
+    gravatar:
+        email: 
+    logo:
+        enabled: true
+        width: 50
+        height: 50
+        url: /images/logo.png
+        gravatar: false
+    favicon: 
+      # eg. generate with http://realfavicongenerator.net/
+      desktop:
+        url: /images/favicon.ico
+        gravatar: false
+      android:
+        url: /images/favicon-192x192.png
+        gravator: false
+      apple:
+        url: /images/apple-touch-icon.png
+        gravator: false
+    social_links:
+        github: http://github.com/probberechts/cactus-dark
+        twitter: /
+        facebook: /
+        linkedin: /
+    show_all_posts: false
+    post_count: 5
+    highlight: rainbow
+
+# RSS
+rss: false
+
+# Plugins
+plugins:
+    disqus_shortname: # Disqus Comments Shortname
+    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
 
 # Miscellaneous
-google_analytics:
-duoshuo_shortname: 
-rss: 
-google_site_verification: 
-baidu_site_verification: 
-favicon: 
-music: 
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
